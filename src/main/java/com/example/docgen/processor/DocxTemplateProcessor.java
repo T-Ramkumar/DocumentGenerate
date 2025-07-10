@@ -2,6 +2,7 @@ package com.example.docgen.processor;
 
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
 import org.apache.poi.xwpf.usermodel.XWPFParagraph;
+import org.springframework.http.HttpHeaders;
 import org.springframework.stereotype.Component;
 
 import java.io.ByteArrayOutputStream;
@@ -34,4 +35,10 @@ public final class DocxTemplateProcessor implements TemplateProcessor {
     public boolean supports(String templateName) {
         return templateName != null && templateName.toLowerCase().endsWith(".docx");
     }
+
+	@Override
+	public HttpHeaders getHeaders(String templateName) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

@@ -46,10 +46,11 @@ public class PdfUtil {
 			  }
 			document.save(out);
 			return out.toByteArray();
-        } catch (IOException e) {
+        } catch (Exception e) {
 			e.printStackTrace();
 			return new byte[0]; // Return an empty byte array in case of error
 		}
+ 
        
     }
 }
