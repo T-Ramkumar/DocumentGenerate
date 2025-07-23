@@ -1,0 +1,8 @@
+<html xmlns:th="http://www.thymeleaf.org">
+  <body>
+    <h1>User Info</h1>
+    <p>Name: <span th:text="${username}">Default Name</span></p>
+    <p>Email: <span th:text="${email}">default@example.com</span></p>
+    <p>Role:  <span th:text="${role}">default@example.com</span></p>
+</body>
+</html>
