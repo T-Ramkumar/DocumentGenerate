@@ -20,6 +20,7 @@ import org.springframework.mock.web.MockMultipartFile;
 import com.example.docgen.model.DocumentRequest;
 import com.example.docgen.model.DocumentResponse;
 import com.example.docgen.service.DocumentGenerationService;
+import com.pst.app.crewpro.common.web.support.vo.Response;
 
 class DocumentControllerTest {
     @Mock
@@ -38,8 +39,8 @@ class DocumentControllerTest {
         DocumentRequest request = new DocumentRequest("test.docx", new HashMap<>());
         MockMultipartFile template = new MockMultipartFile("template", "test.docx", MediaType.APPLICATION_OCTET_STREAM_VALUE, "dummy content".getBytes());
         when(documentGenerationService.getAvailableFields(any(), any())).thenReturn("field1,field2");
-        ResponseEntity<String> response = documentController.getAvailableFields(request, template);
-        assertEquals("field1,field2", response.getBody());
+        ResponseEntity<Response<String>> response = documentController.getAvailableFields(request, template);
+        assertEquals("field1,field2", response.getBody().getData());
     }
 
     @Test
