@@ -33,7 +33,7 @@ public class PdfUtil {
 					String fieldName = entry.getKey();
 					Object fieldValue = entry.getValue();
 					if (acroForm.getField(fieldName) != null) {
-						acroForm.getField(fieldName).setValue(fieldValue.toString());
+						acroForm.getField(fieldName).setValue((fieldValue==null)?"":fieldValue.toString());
 					} else {
 						logger.log(Level.WARNING, () -> "Field not found: " + fieldName);
 					}
